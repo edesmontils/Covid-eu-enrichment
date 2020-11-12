@@ -9,7 +9,7 @@ A short process to reorganise the covid file and to enrich it with Mondial datab
 
 Process :
 ```
-source transform.sh UE-Covid-file.xml tagert-file.xml
+source transform.sh EU-Covid-file.xml tagert-file.xml
 ```
 
 For exemple :
