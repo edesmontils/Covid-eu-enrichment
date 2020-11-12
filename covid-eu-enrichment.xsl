@@ -4,9 +4,9 @@
     <xsl:output method="xml" indent="yes" doctype-system="covid.dtd"/>
 
     <xsl:variable name="countriesCAT"
-        select="distinct-values(/covid-ue/country_list/continent/country/@name)"/>
-    <xsl:variable name="countriesGID" select="distinct-values(/covid-ue/country_list/continent/country/@xml:id)"/>
-    <xsl:variable name="countriesTC" select="distinct-values(/covid-ue/country_list/continent/country/@ctc)"/>
+        select="distinct-values(/covid-eu/country_list/continent/country/@name)"/>
+    <xsl:variable name="countriesGID" select="distinct-values(/covid-eu/country_list/continent/country/@xml:id)"/>
+    <xsl:variable name="countriesTC" select="distinct-values(/covid-eu/country_list/continent/country/@ctc)"/>
 
     <xsl:variable name="mondial"
         select="doc('mondial.xml')/mondial/country[@car_code = $countriesTC or 
@@ -14,13 +14,13 @@
                                                    ./name/text()= $countriesCAT or ./localname/text() = $countriesCAT]"/>
   
     <xsl:template match="/">
-        <covid-ue>
+        <covid-eu>
             <!-- xsl:attribute name="mondial" select="count($mondial)"/-->
             <country_list>
-                <xsl:apply-templates select="/covid-ue/country_list/continent"/>
+                <xsl:apply-templates select="/covid-eu/country_list/continent"/>
             </country_list>
-            <xsl:copy-of select="/covid-ue/record_list" />
-        </covid-ue>
+            <xsl:copy-of select="/covid-eu/record_list" />
+        </covid-eu>
     </xsl:template>
 
     <xsl:template match="continent">

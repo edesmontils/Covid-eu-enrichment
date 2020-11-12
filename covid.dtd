@@ -1,6 +1,6 @@
 <?xml encoding="UTF-8"?>
 
-<!ELEMENT covid-ue (country_list,record_list)>
+<!ELEMENT covid-eu (country_list,record_list)>
 
 <!ELEMENT country_list (continent)+>
 
@@ -23,7 +23,7 @@
 <!ATTLIST year no CDATA #REQUIRED >
 <!ELEMENT month (day)* >
 <!ATTLIST month no CDATA #REQUIRED >
-<!ELEMENT day (record)* >
+<!ELEMENT day (record)+ >
 <!ATTLIST day no CDATA #REQUIRED >
 
 <!ELEMENT record EMPTY>

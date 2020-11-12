@@ -53,8 +53,8 @@ if __name__ == '__main__':
         liste_releves.append(  [ x[7].text, x[4].text, x[5].text, cumul ]  )
 
     print("<?xml version='1.0' encoding='UTF-8'?>")
-    print("<!DOCTYPE covid-ue SYSTEM 'covid.dtd'>")
-    print("<covid-ue>")
+    print("<!DOCTYPE covid-eu SYSTEM 'covid.dtd'>")
+    print("<covid-eu>")
     print(" <country_list>")
     for (c,liste_pays) in liste_continent.items() :
         print("     <continent name='"+c+"'>")
@@ -80,4 +80,4 @@ if __name__ == '__main__':
             print("         </month>")
         print("     </year>")
     print(" </record_list>")
-    print("</covid-ue>")
+    print("</covid-eu>")
