@@ -4,9 +4,9 @@
     <xsl:output method="xml" indent="yes" doctype-system="covid.dtd"/>
 
     <xsl:variable name="countriesCAT"
-        select="distinct-values(/covid-ue/country_list/country/@name)"/>
-    <xsl:variable name="countriesGID" select="distinct-values(/covid-ue/country_list/country/@xml:id)"/>
-    <xsl:variable name="countriesTC" select="distinct-values(/covid-ue/country_list/country/@ctc)"/>
+        select="distinct-values(/covid-ue/country_list/continent/country/@name)"/>
+    <xsl:variable name="countriesGID" select="distinct-values(/covid-ue/country_list/continent/country/@xml:id)"/>
+    <xsl:variable name="countriesTC" select="distinct-values(/covid-ue/country_list/continent/country/@ctc)"/>
 
     <xsl:variable name="mondial"
         select="doc('mondial.xml')/mondial/country[@car_code = $countriesTC or 
@@ -17,10 +17,16 @@
         <covid-ue>
             <!-- xsl:attribute name="mondial" select="count($mondial)"/-->
             <country_list>
-                <xsl:apply-templates select="/covid-ue/country_list/country"/>
+                <xsl:apply-templates select="/covid-ue/country_list/continent"/>
             </country_list>
             <xsl:copy-of select="/covid-ue/record_list" />
         </covid-ue>
+    </xsl:template>
+
+    <xsl:template match="continent">
+        <continent name="{@name}">
+            <xsl:apply-templates select="*" />
+        </continent>
     </xsl:template>
 
     <xsl:template name="enrich">

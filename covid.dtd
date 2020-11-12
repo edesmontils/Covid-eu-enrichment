@@ -2,11 +2,14 @@
 
 <!ELEMENT covid-ue (country_list,record_list)>
 
-<!ELEMENT country_list (country)+>
+<!ELEMENT country_list (continent)+>
 
+<!ELEMENT continent (country)+>
+<!ATTLIST continent
+  name ID #REQUIRED >
+  
 <!ELEMENT country EMPTY>
 <!ATTLIST country
-  continent NMTOKEN #REQUIRED
   country-territory-code CDATA #REQUIRED
   name CDATA #REQUIRED
   population CDATA #REQUIRED

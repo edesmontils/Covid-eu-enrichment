@@ -11,7 +11,7 @@ import xml.etree.ElementTree as ET
 import collections
 import sys
 
-liste_pays = {}
+liste_continent = collections.OrderedDict()
 Liste_annees = collections.OrderedDict()
 # ==================================================
 # ==================================================
@@ -27,10 +27,13 @@ if __name__ == '__main__':
         pop = x[9].text
         if pop is None: pop = '0'
         cont = x[10].text
-        if cont is None: cont=''
+        if cont is None: cont='Other'
+        if cont not in liste_continent.keys() :
+            liste_continent[cont] = collections.OrderedDict()
+        liste_pays = liste_continent[cont]
         if gid not in liste_pays.keys() :
             pays = { 'nom': nom, 'gid' : gid, 
-                     'ctc': ctc, 'pop' : pop, 'continent' : cont }
+                     'ctc': ctc, 'pop' : pop}
             liste_pays[gid] = pays
         annee = x[3].text
         mois = x[2].text
@@ -53,11 +56,12 @@ if __name__ == '__main__':
     print("<!DOCTYPE covid-ue SYSTEM 'covid.dtd'>")
     print("<covid-ue>")
     print(" <country_list>")
-    for p in liste_pays.values():
-        print("     <country xml:id='"+p['gid']+"' name='"+p['nom']+
-                          "' country-territory-code='"+ p['ctc'] +"' population='"+ p['pop'] +
-                          "' continent='"+ p['continent']   +"'/>")
-
+    for (c,liste_pays) in liste_continent.items() :
+        print("     <continent name='"+c+"'>")
+        for p in liste_pays.values():
+            print("         <country xml:id='"+p['gid']+"' name='"+p['nom']+
+                              "' country-territory-code='"+ p['ctc'] +"' population='"+ p['pop'] +"'/>")
+        print("     </continent>")
     print(" </country_list>")
     print(" <record_list>")
     for (a, lm) in Liste_annees.items() :
