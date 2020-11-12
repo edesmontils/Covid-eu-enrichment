@@ -31,5 +31,4 @@
   cases CDATA #REQUIRED
   country IDREF #REQUIRED
   cumulative-14-days-per-100000 CDATA #REQUIRED
-  date NMTOKEN #REQUIRED
   deaths CDATA #REQUIRED>

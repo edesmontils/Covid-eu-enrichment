@@ -1,12 +1,6 @@
 #!/usr/bin/env python3.7
 # coding: utf8
 
-"""
-    Bibliothèque pour représenter les Réseaux de Pétri (RdP) classiques.
-    TODO :
-    - ...
-"""
-
 import xml.etree.ElementTree as ET
 import collections
 import sys
@@ -46,7 +40,7 @@ if __name__ == '__main__':
             liste_mois[mois] = collections.OrderedDict()
         liste_jours = liste_mois[mois]
         if jour not in liste_jours.keys() :
-            liste_jours[jour] = []
+            liste_jours[jour] = list()
         liste_releves = liste_jours[jour]
         cumul = x[11].text
         if cumul is None: cumul='0'
@@ -71,8 +65,7 @@ if __name__ == '__main__':
             for (j,lr) in lj.items():
                 print("             <day no='"+j+"'>")
                 for x in lr :
-                    print("                 <record date='"+ annee + "-"+mois+"-"+jour +
-                                        "' country='"+ x[0] +
+                    print("                 <record country='"+ x[0] +
                                         "' cases='"+ x[1] +
                                         "' deaths='"+ x[2] +
                                         "' cumulative-14-days-per-100000='"+ x[3] +"'/>")
