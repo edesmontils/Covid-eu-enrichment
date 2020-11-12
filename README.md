@@ -15,7 +15,7 @@ source transform.sh EU-Covid-file.xml tagert-file.xml
 For exemple :
 
 ```
-source transform.sh covid19-eu-monde-2020-11-11.xml covid-tp.xml
+source transform.sh ./test/covid19-eu-world-2020-11-11.xml covid-tp.xml
 ```
 
 ## Links
