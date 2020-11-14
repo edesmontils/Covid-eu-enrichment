@@ -18,6 +18,9 @@ For exemple :
 source transform.sh ./test/covid19-eu-world-2020-11-11.xml covid-tp.xml
 ```
 
+The result schema is :
+![](./covid.png)
+
 ## Links
 
 Mondial Database : http://www.dbis.informatik.uni-goettingen.de/Mondial/ 
