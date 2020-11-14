@@ -40,7 +40,7 @@
                     <xsl:attribute name="car_code" select="$mondial/@car_code"/>
                 </xsl:when>
                 <xsl:when test="count($mondial) gt 1"><xsl:attribute name="area" select="concat(count($mondial),'*--------------')" /></xsl:when>
-                <xsl:otherwise><xsl:attribute name="area">Unkown</xsl:attribute></xsl:otherwise>
+                <!--xsl:otherwise><xsl:attribute name="area">0</xsl:attribute></xsl:otherwise-->
             </xsl:choose>
             <xsl:value-of select="$mondial/localname/text()"/>
         </country>        
