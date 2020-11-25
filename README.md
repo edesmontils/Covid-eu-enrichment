@@ -28,6 +28,6 @@ The result schema (using [3]) is :
 
 [2] Mondial Database : http://www.dbis.informatik.uni-goettingen.de/Mondial/ 
 
-[3] Emmanuel Desmontils. Une représentation graphique des schémas XML pour l'enseignement. Informatique des organisations et systèmes d'informations de décision (INFORSID), INFORSID, May 2014, Lyon, France. pp.279-294. ⟨https://hal.inria.fr/hal-00995270⟩
+[3] Emmanuel Desmontils. Une représentation graphique des schémas XML pour l'enseignement. Informatique des organisations et systèmes d'informations de décision (INFORSID), INFORSID, May 2014, Lyon, France. pp.279-294. ⟨hal-00995270 : https://hal.archives-ouvertes.fr/hal-00995270⟩
 
 (c) E. Desmontils, University of Nantes, november 2020
